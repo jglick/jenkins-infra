@@ -10,6 +10,7 @@ class profile::apache-misc(
 
   # enable mod_status for local interface and allow datadog to monitor this
   include apache::mod::status
+  include datadog_agent
   include datadog_agent::integrations::apache
 
   file { '/etc/apache2/conf.d/00-reverseproxy_combined':
